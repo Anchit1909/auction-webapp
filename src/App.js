@@ -4,7 +4,7 @@ import { NavComp } from "./components/authentication/NavComp";
 import { AuthProvider } from "./context/AuthContext";
 import StartPage from "./components/StartPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Footer from "./components/Footer";
+import Bottom from "./components/Bottom";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ export const App = () => {
       <NavComp />
       <RouterProvider router={router} />
       {/* <AuctionBody /> */}
-      <Footer />
+      <Bottom />
     </AuthProvider>
   );
 };

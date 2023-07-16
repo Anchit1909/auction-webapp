@@ -1,7 +1,7 @@
 import logoImg from "../assets/logo.png";
 import React from "react";
 
-function Footer() {
+function Bottom() {
   return (
     <section className="mt-10 py-10 h-16  text-center" id="footer">
       <div className=" max-w-screen-2xl mx-auto flex flex-col items-center justify-center md:justify-between h-full px-12 md:flex-row">
@@ -28,4 +28,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Bottom;
