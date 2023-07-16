@@ -1,10 +1,10 @@
-import { Button, Form, Modal, Alert } from 'react-bootstrap';
-import React, { useContext, useRef, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
+import { Button, Form, Modal, Alert } from "react-bootstrap";
+import React, { useContext, useRef, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export const RegisterComp = () => {
   const [showForm, setShowForm] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -16,10 +16,10 @@ export const RegisterComp = () => {
   const closeForm = () => setShowForm(false);
   const submitForm = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
 
     if (passwordRef.current.value !== cmfPasswordRef.current.value) {
-      return setError('Passwords does not match');
+      return setError("Passwords does not match");
     }
 
     try {
@@ -56,10 +56,10 @@ export const RegisterComp = () => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={closeForm}>
+            <Button variant="secondary bg-gray-500" onClick={closeForm}>
               Cancel
             </Button>
-            <Button variant="primary" type="submit">
+            <Button variant="primary bg-blue-700" type="submit">
               Register
             </Button>
           </Modal.Footer>

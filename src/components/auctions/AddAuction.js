@@ -48,7 +48,7 @@ export const AddAuction = ({ setAuction }) => {
 
   return (
     <>
-      <div className="col d-flex justify-content-center my-3">
+      <div className="col d-flex justify-content-center my-3 pb-3">
         <div onClick={openForm} className="btn btn-outline-secondary mx-2">
           + Auction
         </div>
@@ -113,10 +113,10 @@ export const AddAuction = ({ setAuction }) => {
             </Row>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={closeForm}>
+            <Button variant="secondary bg-gray-500" onClick={closeForm}>
               Cancel
             </Button>
-            <Button variant="primary" type="submit">
+            <Button variant="primary bg-blue-700" type="submit">
               Submit
             </Button>
           </Modal.Footer>

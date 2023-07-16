@@ -1,10 +1,10 @@
-import { Button, Form, Modal, Alert } from 'react-bootstrap';
-import React, { useContext, useRef, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
+import { Button, Form, Modal, Alert } from "react-bootstrap";
+import React, { useContext, useRef, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export const LoginComp = () => {
   const [showForm, setShowForm] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -16,13 +16,13 @@ export const LoginComp = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
 
     try {
       await login(emailRef.current.value, passwordRef.current.value);
       closeForm();
     } catch (error) {
-      setError('Invalid login');
+      setError("Invalid login");
     }
   };
 
@@ -48,10 +48,10 @@ export const LoginComp = () => {
             </Form.Group>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={closeForm}>
+            <Button variant="secondary bg-gray-500" onClick={closeForm}>
               Cancel
             </Button>
-            <Button variant="primary" type="submit">
+            <Button variant="primary bg-blue-700" type="submit">
               Login
             </Button>
           </Modal.Footer>

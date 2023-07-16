@@ -9,7 +9,7 @@ const renderer = ({ days, hours, minutes, seconds, completed, props }) => {
 
   return (
     <div className="col">
-      <div className="card shadow-sm">
+      <div className="card shadow-sm md:h-full lg:w-[450px]">
         <div
           style={{
             height: "320px",
@@ -21,19 +21,20 @@ const renderer = ({ days, hours, minutes, seconds, completed, props }) => {
           className="w-100"
         />
 
-        <div className="card-body">
-          <p className="lead display-6">{props.item.title}</p>
-          <div className="d-flex jsutify-content-between align-item-center">
-            <h5>
-              {days} hr: {minutes} min: {seconds} sec
+        <div className="card-body space-y-4">
+          <p className="lead text-4xl">{props.item.title}</p>
+          <div className="d-flex justify-content-between align-item-center font-bold">
+            <h5 className="text-xl">
+              {hours} hr: {minutes} min: {seconds} sec
             </h5>
           </div>
-          <p className="card-text">{props.item.desc}</p>
+          <p className="text-xl">{props.item.desc}</p>
           <div className="d-flex justify-content-between align-item-center">
-            <div>
+            <div className="">
               {props.item.curWinner ? (
-                <p className="display-8">
-                  Current Highest Bidder: {props.item.curWinner}
+                <p className="text-lg font-normal">
+                  Current Highest Bidder:{" "}
+                  <span className="font-medium">{props.item.curWinner}</span>
                 </p>
               ) : (
                 <p>No bids yet</p>
@@ -48,26 +49,26 @@ const renderer = ({ days, hours, minutes, seconds, completed, props }) => {
               ) : props.owner.email === props.item.email ? (
                 <div
                   onClick={() => props.endAuction(props.item.id)}
-                  className="btn btn-outline-secondary"
+                  className="btn btn-outline-secondary my-4"
                 >
                   Cancel Auction
                 </div>
               ) : props.owner.email === props.item.curWinner ? (
                 <div className="">
-                  <p className="display-6">Winner</p>
+                  <p className="text-3xl py-4">Winner</p>
                 </div>
               ) : (
                 <div
                   onClick={() =>
                     props.bidAuction(props.item.id, props.item.curPrice)
                   }
-                  className="btn btn-outline-secondary"
+                  className="btn btn-outline-secondary my-2"
                 >
                   Bid
                 </div>
               )}
             </div>
-            <p className="display-6">${props.item.curPrice}</p>
+            <p className="display-6 my-4">${props.item.curPrice}</p>
           </div>
         </div>
       </div>
